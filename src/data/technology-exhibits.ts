@@ -197,7 +197,7 @@ export const technologyExhibits: Record<ToolName, TechnologyExhibit> = {
     color: "#d6abff",
     image: "/images/tools/github.webp",
     alt: "Comparación de líneas agregadas y eliminadas en GitHub",
-    href: "https://docs.github.com/en/get-started/start-your-journey/hello-world",
+    href: "https://docs.github.com/en/get-started/using-github/hello-world",
     description: "Publicar repositorios y colaborar revisando cambios.",
   },
   "Machine Learning": {

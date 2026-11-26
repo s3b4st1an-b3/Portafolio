@@ -135,7 +135,7 @@ export default async function ProjectPage(
             {project.repositories.map((repository) => (
               <Link
                 key={repository.url}
-                href={repository.url}
+                href={repository.codeUrl ?? repository.url}
                 target="_blank"
                 rel="noreferrer"
               >
