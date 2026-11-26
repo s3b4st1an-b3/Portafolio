@@ -152,19 +152,25 @@ function RobotScene({
     );
     aim.current.lerp(point, 1 - Math.exp(-9 * step));
     const { x, y } = aim.current;
-    const narrow = size.width <= 760;
+    const narrow = window.innerWidth <= 760;
     const lateral = narrow ? 0 : 0.45 * pullback;
+    const portraitDistance = narrow
+      ? Math.max(1, (size.height * 0.95) / size.width)
+      : 1;
 
     camera.position.set(
-      MathUtils.lerp(0.04, 0.72, pullback),
-      MathUtils.lerp(3.22, 2.56, pullback),
-      MathUtils.lerp(narrow ? 2.75 : 2.35, narrow ? 6.1 : 5.65, pullback),
+      MathUtils.lerp(0.04, narrow ? 0.22 : 0.72, pullback),
+      MathUtils.lerp(narrow ? 3.1 : 3.22, 2.56, pullback),
+      MathUtils.lerp(narrow ? 3.2 : 2.35, narrow ? 5.15 : 5.65, pullback) *
+        portraitDistance,
     );
-    cameraTarget.current.set(0, MathUtils.lerp(3.19, 1.99, pullback), 0);
+    cameraTarget.current.set(
+      0,
+      MathUtils.lerp(narrow ? 2.86 : 3.19, narrow ? 2.1 : 1.99, pullback),
+      0,
+    );
     const offsetX = -size.width * lateral * 0.5;
-    const offsetY = narrow
-      ? size.height * 0.235
-      : -size.height * 0.07 * pullback;
+    const offsetY = narrow ? 0 : -size.height * 0.07 * pullback;
     if (
       camera.view?.width !== size.width ||
       camera.view.height !== size.height ||
