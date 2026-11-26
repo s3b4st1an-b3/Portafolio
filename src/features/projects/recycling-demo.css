@@ -1,0 +1,169 @@
+.recycling-demo {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  scroll-margin-top: 0.85rem;
+}
+.recycling-demo-panel {
+  --demo-line: #527b6c;
+  --demo-accent: #a6f3bb;
+  display: grid;
+  gap: clamp(0.9rem, 2.5vw, 1.4rem);
+  padding: clamp(0.95rem, 3vw, 2.25rem);
+  color: #def1e9;
+  background:
+    radial-gradient(ellipse at top right, #2955428c, transparent 58%), #102620;
+  border: 1px solid var(--demo-line);
+  border-top-color: var(--demo-accent);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.8rem 2.4rem #08171354;
+}
+.recycling-demo-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 670;
+  font-size: clamp(1.75rem, 4vw, 3.4rem);
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+.recycling-demo-heading p,
+.recycling-demo-note {
+  color: #bcdbd1;
+}
+.recycling-demo-heading p {
+  margin-top: 0.48rem;
+}
+.recycling-demo-samples,
+.recycling-demo-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.48rem, 1.4vw, 1rem);
+}
+.recycling-demo-samples button {
+  min-width: 0;
+  position: relative;
+  display: grid;
+  padding: 0;
+  text-align: start;
+  border: 1px solid var(--demo-line);
+  border-radius: 0.45rem;
+  overflow: hidden;
+  background: #10221d;
+  color: #e3f7ec;
+  cursor: pointer;
+}
+.recycling-demo-samples button:is(:hover, [aria-pressed="true"]) {
+  border-color: var(--demo-accent);
+  box-shadow:
+    0 0 0 1px var(--demo-accent),
+    0 0 1.1rem #7cea9e42;
+}
+.recycling-demo-samples button:focus-visible {
+  outline: 2px solid #e6ffae;
+  outline-offset: 3px;
+}
+.recycling-demo-samples button span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.65rem clamp(0.5rem, 1.5vw, 0.85rem);
+  min-height: 3rem;
+  font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+  line-height: 1.2;
+}
+.recycling-demo-samples button svg {
+  flex: none;
+}
+.recycling-demo-samples img {
+  width: 100%;
+  height: clamp(4.5rem, 12vw, 8rem);
+  object-fit: cover;
+}
+.recycling-demo-flow {
+  min-width: 0;
+  min-height: 11rem;
+  display: grid;
+  padding: clamp(0.65rem, 2vw, 1.05rem);
+  border: 1px solid #476b61;
+  border-radius: 0.45rem;
+  background: #0c1d19c9;
+}
+.recycling-demo-steps {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.recycling-demo-steps li {
+  min-width: 0;
+}
+.recycling-demo-steps figure {
+  display: grid;
+  gap: 0.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #c3dfd6;
+}
+.recycling-demo-steps figure img {
+  width: 100%;
+  height: clamp(6rem, 16vw, 12rem);
+  object-fit: contain;
+  border-radius: 0.25rem;
+  background: #0b1a17;
+}
+.recycling-demo-crop img {
+  outline: 1px solid #659a7c;
+}
+.recycling-demo-result {
+  align-self: stretch;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.35rem;
+  padding: 0.75rem clamp(0.6rem, 1.7vw, 1.1rem);
+  border-inline-start: 2px solid var(--demo-accent);
+  color: var(--demo-accent);
+  background: linear-gradient(140deg, #305442, #162d24);
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+.recycling-demo-result p {
+  color: #d6eee2;
+  font-size: 0.82rem;
+}
+.recycling-demo-result strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.8vw, 2.55rem);
+  line-height: 1.07;
+}
+.recycling-demo-placeholder {
+  margin: auto;
+  text-align: center;
+  color: #b5d5c5;
+}
+.recycling-demo-note {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+@media (max-width: 660px) {
+  .recycling-demo-samples button svg {
+    display: none;
+  }
+  .recycling-demo-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .recycling-demo-result {
+    grid-column: 1 / -1;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .recycling-demo-steps {
+    animation: recycling-demo-show-result 0.3s ease-out both;
+  }
+  @keyframes recycling-demo-show-result {
+    from {
+      opacity: 0.48;
+      transform: translateY(0.26rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

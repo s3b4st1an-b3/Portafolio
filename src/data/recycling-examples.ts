@@ -1,0 +1,32 @@
+export const recyclingExamples = [
+  {
+    id: "papel",
+    label: "Papel doblado",
+    photo: "/images/projects/reciclaje/muestras/papel.webp",
+    input: "/images/projects/reciclaje/muestras/papel-entrada.webp",
+    width: 512,
+    height: 384,
+    inputSize: 224,
+    category: "Papel/Cartón",
+  },
+  {
+    id: "vidrio",
+    label: "Frasco de vidrio",
+    photo: "/images/projects/reciclaje/muestras/vidrio.webp",
+    input: "/images/projects/reciclaje/muestras/vidrio-entrada.webp",
+    width: 512,
+    height: 384,
+    inputSize: 224,
+    category: "Vidrio",
+  },
+  {
+    id: "plastico",
+    label: "Botella de plástico",
+    photo: "/images/projects/reciclaje/muestras/plastico.webp",
+    input: "/images/projects/reciclaje/muestras/plastico-entrada.webp",
+    width: 512,
+    height: 384,
+    inputSize: 224,
+    category: "Plástico",
+  },
+] as const;
