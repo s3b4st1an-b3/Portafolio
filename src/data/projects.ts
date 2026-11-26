@@ -40,14 +40,20 @@ export const projects: readonly Project[] = [
       {
         label: "Frontend web",
         url: "https://github.com/MiguelY08/proyecto_seymSoft",
+        codeUrl:
+          "https://github.com/MiguelY08/proyecto_seymSoft/tree/pruebaDespliegueFrond/frontend",
       },
       {
         label: "Backend",
         url: "https://github.com/MiguelY08/proyecto_seymSoft_backend",
+        codeUrl:
+          "https://github.com/MiguelY08/proyecto_seymSoft_backend/tree/pruebaDespliegue/src",
       },
       {
         label: "Aplicación móvil",
         url: "https://github.com/MiguelY08/proyecto_seymSoft_movil",
+        codeUrl:
+          "https://github.com/MiguelY08/proyecto_seymSoft_movil/tree/developer/movil_seymsoft",
       },
     ],
     accent: "cyan",

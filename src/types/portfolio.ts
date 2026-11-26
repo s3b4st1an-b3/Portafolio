@@ -3,6 +3,7 @@ export type ProjectSlug = "seym-soft" | "reciclaje";
 export type Repository = {
   label: string;
   url: string;
+  codeUrl?: string;
 };
 
 export type Project = {

@@ -12,13 +12,13 @@ Los archivos `robot-opening.webp` y `studio-gallery.webp` son renders capturados
 
 Las capturas de herramientas proceden de la documentación oficial. Se redimensionaron y se sirven localmente en WebP. Las tarjetas marcadas como «Ejemplo» usan ilustraciones de código y flujos redactadas para este portafolio.
 
-| Diapositiva | Fuente de la captura                                                                                |
-| ----------- | --------------------------------------------------------------------------------------------------- |
-| Postman     | [Guía rápida de Postman](https://learning.postman.com/docs/getting-started/quick-start/)            |
-| React       | [React Developer Tools](https://react.dev/learn/react-developer-tools)                              |
-| Flutter     | [Flutter Inspector](https://docs.flutter.dev/tools/devtools/inspector)                              |
-| Git         | [Historial de Git en VS Code](https://code.visualstudio.com/docs/sourcecontrol/history)             |
-| GitHub      | [Hello World de GitHub Docs](https://docs.github.com/en/get-started/start-your-journey/hello-world) |
+| Diapositiva | Fuente de la captura                                                                          |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| Postman     | [Guía rápida de Postman](https://learning.postman.com/docs/getting-started/quick-start/)      |
+| React       | [React Developer Tools](https://react.dev/learn/react-developer-tools)                        |
+| Flutter     | [Flutter Inspector](https://docs.flutter.dev/tools/devtools/inspector)                        |
+| Git         | [Historial de Git en VS Code](https://code.visualstudio.com/docs/sourcecontrol/history)       |
+| GitHub      | [Hello World de GitHub Docs](https://docs.github.com/en/get-started/using-github/hello-world) |
 
 El video de WhatsApp se usó como referencia de montaje, escala y transiciones. Sus fotogramas, marcas y audio se mantienen fuera de la aplicación.
 

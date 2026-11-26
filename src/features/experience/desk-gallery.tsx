@@ -131,7 +131,11 @@ export function DeskGallery({
                   </dl>
                 )}
               </div>
-              {repository && <a href={repository.url}>Ver código en GitHub</a>}
+              {repository && (
+                <a href={repository.codeUrl ?? repository.url}>
+                  Ver código en GitHub
+                </a>
+              )}
             </div>
           </div>
         )}
@@ -164,7 +168,7 @@ export function DeskGallery({
             <ul>
               {project.repositories.map((repo) => (
                 <li key={repo.url}>
-                  <a href={repo.url}>{repo.label}</a>
+                  <a href={repo.codeUrl ?? repo.url}>{repo.label}</a>
                 </li>
               ))}
             </ul>
