@@ -195,6 +195,42 @@ try {
       };`,
   });
   await media("no-preference");
+  await size(390);
+  await page("/?robot-mobile=1", ".fusion-bookend-intro");
+  await until(
+    () =>
+      evaluate(
+        "document.querySelector('#titulo-inicio').getBoundingClientRect().height > 0",
+      ),
+    "hero móvil visible",
+  );
+  assert.ok(
+    await evaluate(`(() => {
+      const stage = document.querySelector('.fusion-bookend-intro').getBoundingClientRect();
+      const nav = document.querySelector('.story-header').getBoundingClientRect();
+      const title = document.querySelector('#titulo-inicio');
+      const titleBounds = title.getBoundingClientRect();
+      const letters = Array.from(title.querySelectorAll('.hero-type-char'));
+      return stage.height > 0
+        && Math.abs(stage.top - nav.bottom) <= 1
+        && stage.bottom <= titleBounds.top
+        && titleBounds.bottom <= innerHeight
+        && title.querySelector('em').textContent.trim() === 'Bedoya Valencia.'
+        && letters.every(letter => getComputedStyle(letter).animationName === 'none'
+          && getComputedStyle(letter).opacity === '1');
+    })()`),
+    "el nombre completo aparece de inmediato debajo del robot en móvil",
+  );
+  await until(
+    () =>
+      evaluate(
+        "!!document.querySelector('.fusion-bookend-intro[data-live=true] canvas')",
+      ),
+    "robot WebGL en móvil",
+  );
+  await delay(2600);
+  await screenshot("robot-movil");
+
   await size(1440);
   await page("/?film=1", ".fusion-editorial");
   assert.ok(

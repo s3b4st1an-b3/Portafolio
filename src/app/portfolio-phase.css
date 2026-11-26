@@ -346,33 +346,48 @@
   pointer-events: auto;
 }
 @media (max-width: 760px) {
+  .fusion-editorial #inicio {
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    padding-top: 0;
+  }
+  #inicio .fusion-bookend-intro {
+    position: relative;
+    inset: auto;
+    height: clamp(12.5rem, 43vh, 23rem);
+    height: clamp(12.5rem, 43svh, 23rem);
+  }
+  #inicio .fusion-bookend-intro::after {
+    display: block;
+    z-index: 1;
+    inset: auto 0 0;
+    height: 22%;
+    background: linear-gradient(transparent, #0a101e);
+    mask-image: none;
+  }
   .fusion-editorial #inicio .cinema-intro {
-    align-items: flex-end;
-    min-height: min(41rem, calc(100svh - var(--header-height)));
-    padding-top: clamp(13rem, 43svh, 24rem);
+    align-items: flex-start;
+    min-height: 0;
+    padding-top: 0.85rem;
   }
   .fusion-editorial #inicio .hero-heading {
     width: 100%;
   }
   .fusion-editorial #inicio::after {
-    background: linear-gradient(
-      0deg,
-      #0a101e 6%,
-      #0a101ef5 27%,
-      #0a101e9c 47%,
-      transparent 61%
-    );
+    display: none;
   }
   #inicio .fusion-bookend-intro .fusion-poster {
-    inset: 0 0 auto;
-    height: 59%;
-    mask-image:
-      radial-gradient(ellipse at 50% 40%, #000 34%, transparent 80%),
-      linear-gradient(transparent, #000 18% 80%, transparent);
-    mask-composite: intersect;
+    inset: 0;
+    mask-image: radial-gradient(ellipse at 50% 45%, #000 40%, transparent 80%);
   }
-  #inicio .fusion-studio-poster {
-    object-fit: cover;
+  #inicio .hero-heading h1 em {
+    color: #63b8ff;
+  }
+  #inicio .hero-type-char {
+    animation: none;
+  }
+  #inicio .hero-type-char::after {
+    content: none;
   }
 }
 
